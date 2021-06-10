@@ -2,6 +2,7 @@ package com.epam.prejap.tetris;
 
 import com.epam.prejap.tetris.block.BlockFeed;
 import com.epam.prejap.tetris.game.*;
+import com.epam.prejap.tetris.greeting.Greeting;
 import com.epam.prejap.tetris.player.Player;
 import com.epam.prejap.tetris.player.RandomPlayer;
 
@@ -48,20 +49,10 @@ class Tetris {
         var playfield = new Playfield(rows, cols, feed, printer);
         var game = new Tetris(playfield, new Waiter(delay), new RandomPlayer());
 
-        game.welcomeThePlayer();
+        new Greeting(10000).welcomeThePlayer();
         var score = game.play();
 
         System.out.println("Score: " + score.points());
-    }
-
-    private void welcomeThePlayer() {
-        Thread welcomer = new Thread(new Welcomer(new Waiter(5000)));
-        welcomer.start();
-        try {
-            welcomer.join();
-        } catch (InterruptedException e) {
-            System.err.println(e.getMessage());
-        }
     }
 
 }
