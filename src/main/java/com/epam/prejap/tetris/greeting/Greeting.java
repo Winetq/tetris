@@ -1,21 +1,22 @@
 package com.epam.prejap.tetris.greeting;
 
 /**
- * The Greeting class manage the Welcomer thread.
+ * Manages the Welcomer thread.
  * @author Michał Cwynar
+ * @see Welcomer
  */
 public class Greeting {
     private final Thread welcomer;
 
     /**
-     * The constructor creates the thread.
+     * Creates the thread.
      */
-    public Greeting(long milis) {
-        this.welcomer = new Thread(new Welcomer(this, milis));
+    public Greeting(long millis) {
+        this.welcomer = new Thread(new Welcomer(this, millis));
     }
 
     /**
-     * This method runs the thread (start()) and waits for him (join()).
+     * Runs the thread (start()) and waits for him (join()).
      */
     public void welcomeThePlayer() {
         welcomer.start();
@@ -27,7 +28,7 @@ public class Greeting {
     }
 
     /**
-     * This method wakes the thread.
+     * Wakes the thread.
      */
     void finishTheWelcoming() {
         welcomer.interrupt();

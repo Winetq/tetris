@@ -22,7 +22,7 @@ class Welcomer extends JFrame implements Runnable, KeyListener {
     }
 
     /**
-     * The task of this thread is to create a welcome screen using Java Swing and display it for given number of
+     * The task of this thread is to create a welcome screen using Java Swing and display it for a given number of
      * milliseconds and after that deleting this screen.
      */
     @Override

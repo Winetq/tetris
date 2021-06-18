@@ -19,7 +19,7 @@ public class GreetingTest {
         greeting.welcomeThePlayer();
         long endTime = System.nanoTime();
         // then
-        assertThat((endTime-startTime)/1000000).isBetween(time-200, time+200);
+        assertThat((endTime-startTime)/1000000).isBetween(time-250, time+250);
     }
 
     @DataProvider
