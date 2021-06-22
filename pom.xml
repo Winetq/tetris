@@ -19,6 +19,8 @@
         <testng.version>7.4.0</testng.version>
         <version.assertj>3.19.0</version.assertj>
         <maven.jar.plugin.version>3.2.0</maven.jar.plugin.version>
+        <maven.surefire.plugin.version>3.0.0-M5</maven.surefire.plugin.version>
+        <maven.failsafe.plugin.version>3.0.0-M5</maven.failsafe.plugin.version>
         <properties.maven.plugin.version>1.0.0</properties.maven.plugin.version>
     </properties>
 
@@ -34,11 +36,6 @@
             <artifactId>assertj-core</artifactId>
             <version>${version.assertj}</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-failsafe-plugin</artifactId>
-            <version>3.0.0-M5</version>
         </dependency>
     </dependencies>
 
@@ -61,7 +58,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.0.0-M5</version>
+                <version>${maven.surefire.plugin.version}</version>
                 <configuration>
                     <excludedGroups>jar</excludedGroups>
                 </configuration>
@@ -70,7 +67,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
-                <version>3.0.0-M5</version>
+                <version>${maven.failsafe.plugin.version}</version>
                 <executions>
                     <execution>
                         <id>jar-archive-testing</id>

@@ -30,7 +30,9 @@ class Welcomer extends JFrame implements Runnable, KeyListener {
         createTheWelcomeWindow();
         try {
             Thread.sleep(millis);
-        } catch (InterruptedException ignore) {}
+        } catch (InterruptedException e) {
+            System.out.println("Tetris");
+        }
         dispose();
     }
 
@@ -43,22 +45,28 @@ class Welcomer extends JFrame implements Runnable, KeyListener {
         setResizable(true);
         addKeyListener(this);
         setFocusable(true);
-        setFocusTraversalKeysEnabled(false);
-        createTheLabels();
+        add(createTheLabels());
     }
 
-    private void createTheLabels() {
+    private JPanel createTheLabels() {
         JPanel panel = new JPanel();
         panel.add(new JLabel("Welcome " + System.getProperty("user.name") + "!"), BorderLayout.CENTER);
         panel.add(new JLabel("Good luck!"), BorderLayout.CENTER);
-        add(panel);
+        return panel;
     }
 
+    /**
+     * Captures typed keys.
+     */
     @Override
-    public void keyTyped(KeyEvent e) {}
+    public void keyTyped(KeyEvent e) {
+        /*
+         * No need to distinguish between typed/pressed/released.
+         */
+    }
 
     /**
-     * There is a possibility to manually close the screen pressing the Esc key.
+     * Captures pressed keys - there is a possibility to manually close the screen pressing the Esc key.
      * @param e the pressed key
      */
     @Override
@@ -68,6 +76,13 @@ class Welcomer extends JFrame implements Runnable, KeyListener {
         }
     }
 
+    /**
+     * Captures released keys.
+     */
     @Override
-    public void keyReleased(KeyEvent e) {}
+    public void keyReleased(KeyEvent e) {
+        /*
+         * No need to distinguish between typed/pressed/released.
+         */
+    }
 }

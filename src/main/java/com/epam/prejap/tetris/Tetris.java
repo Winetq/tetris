@@ -49,7 +49,7 @@ class Tetris {
         var playfield = new Playfield(rows, cols, feed, printer);
         var game = new Tetris(playfield, new Waiter(delay), new RandomPlayer());
 
-        new Greeting(10000).welcomeThePlayer();
+        new Greeting(10_000).welcomeThePlayer();
         var score = game.play();
 
         System.out.println("Score: " + score.points());

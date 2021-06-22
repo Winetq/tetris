@@ -10,6 +10,7 @@ public class Greeting {
 
     /**
      * Creates the thread.
+     * @param millis the greeting will last a given number of milliseconds
      */
     public Greeting(long millis) {
         this.welcomer = new Thread(new Welcomer(this, millis));
