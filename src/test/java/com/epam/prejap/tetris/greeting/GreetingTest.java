@@ -8,7 +8,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * Michał Cwynar
  */
-@Test(groups = {"greeting"})
+@Test(groups = {"Greeting Tests"})
 public class GreetingTest {
     @Test(dataProvider = "time")
     public void welcomeThePlayer_invokingThisMethodWithoutPressingTheEscKey_stopsTheProgramRoughlyForGivenTime(long time) {
