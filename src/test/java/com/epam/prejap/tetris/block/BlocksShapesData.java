@@ -1,5 +1,6 @@
 package com.epam.prejap.tetris.block;
 
+import com.epam.prejap.tetris.game.Color;
 import org.testng.annotations.DataProvider;
 
 import java.util.*;
@@ -11,40 +12,49 @@ import java.util.function.Supplier;
  *
  * @author Nikita Pochapynskyi
  */
-public class BlockShapeData {
+public class BlocksShapesData {
 
     /**
      * Contains block's constructor reference and its expected image for each block to be tested.
      * Feel free to add more shapes here (through static init block). They will be tested automatically.
      */
     private static final Map<Supplier<Block>, byte[][]> blocks = new LinkedHashMap<>() {{
-        put(SBlock::new, new byte[][]{
-                {0, 1, 1},
-                {1, 1, 0}
+        put(HBlock::new, new byte[][]{
+                {Color.CYAN.id, 0, Color.CYAN.id},
+                {Color.CYAN.id, Color.CYAN.id, Color.CYAN.id},
+                {Color.CYAN.id, 0, Color.CYAN.id}
         });
-        put(OBlock::new, new byte[][]{
-                {1, 1},
+        put(SBlock::new, new byte[][]{
+                {0, Color.BLUE.id, Color.BLUE.id},
+                {Color.BLUE.id, Color.BLUE.id, 0}
+        });
+        put(JBlock::new, new byte[][]{
+                {0, 1},
+                {0, 1},
                 {1, 1}
         });
+        put(OBlock::new, new byte[][]{
+                {Color.RED.id, Color.RED.id},
+                {Color.RED.id, Color.RED.id}
+        });
         put(TBlock::new, new byte[][]{
-                {1, 1, 1},
-                {0, 1, 0}
+                {Color.GREEN.id, Color.GREEN.id, Color.GREEN.id},
+                {0, Color.GREEN.id, 0}
         });
         put(YBlock::new, new byte[][]{
-                {1, 0, 1},
-                {0, 1, 0},
-                {0, 1, 0}
+                {Color.YELLOW.id, 0, Color.YELLOW.id},
+                {0, Color.YELLOW.id, 0},
+                {0, Color.YELLOW.id, 0}
         });
         put(IBlock::new, new byte[][]{
-                {1},
-                {1},
-                {1},
-                {1}
+                {Color.PURPLE.id},
+                {Color.PURPLE.id},
+                {Color.PURPLE.id},
+                {Color.PURPLE.id}
         });
-        put(HBlock::new, new byte[][]{
-                {1, 0, 1},
-                {1, 1, 1},
-                {1, 0, 1}
+        put(ZBlock::new, new byte[][]{
+                {1, 1, 0},
+                {0, 1, 1}
         });
     }};
 
